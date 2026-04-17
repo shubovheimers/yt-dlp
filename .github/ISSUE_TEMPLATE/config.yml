@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Get Help / Ask a Question
-    url: https://github.com/yt-dlp/yt-dlp/discussions
-    about: For general questions and help, please use the discussions page.
-  - name: Documentation
-    url: https://github.com/yt-dlp/yt-dlp#readme
-    about: Please read the documentation before submitting an issue.
-  - name: Supported Sites
-    url: https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md
-    about: Check the list of supported sites before requesting support.
+  - name: Discord Server
+    url: https://discord.gg/H5MNcFW63r
+    about: For general questions and support
+  - name: Matrix Room
+    url: https://matrix.to/#/#yt-dlp:matrix.org
+    about: For general questions and support (Matrix)
+  - name: Docs/Wiki
+    url: https://github.com/yt-dlp/yt-dlp/wiki
+    about: Read the documentation before opening an issue
