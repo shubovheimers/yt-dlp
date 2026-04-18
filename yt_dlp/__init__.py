@@ -77,7 +77,7 @@ def main(argv=None):
         else:
             # Print a success message when all downloads complete normally
             if retcode == 0 and all_urls:
-                ydl.to_screen('[info] All downloads finished successfully')
+                ydl.to_screen(f'[info] All {len(all_urls)} download(s) finished successfully')
 
     sys.exit(retcode)
 
