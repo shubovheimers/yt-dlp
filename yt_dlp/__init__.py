@@ -71,8 +71,9 @@ def main(argv=None):
             ydl.report_error(f'fixed output name but more than one file to download ({e})')
             retcode = 1
         except KeyboardInterrupt:
-            ydl.to_screen('\nERROR: Interrupted by user')
-            retcode = 1
+            # Print a newline so the next shell prompt appears on a clean line
+            ydl.to_screen('\nInterrupted by user, exiting...')
+            retcode = 130  # Standard exit code for SIGINT
 
     sys.exit(retcode)
 
