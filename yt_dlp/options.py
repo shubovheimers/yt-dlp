@@ -66,8 +66,8 @@ def parseOpts(overrideArguments=None):
     )
     network.add_option(
         '--socket-timeout',
-        dest='socket_timeout', type=float, default=None, metavar='SECONDS',
-        help='Time to wait before giving up, in seconds',
+        dest='socket_timeout', type=float, default=30.0, metavar='SECONDS',
+        help='Time to wait before giving up, in seconds (default is %default)',
     )
     network.add_option(
         '--source-address',
@@ -88,38 +88,4 @@ def parseOpts(overrideArguments=None):
     )
     selection.add_option(
         '--max-downloads',
-        dest='max_downloads', metavar='NUMBER', type=int, default=None,
-        help='Abort after downloading NUMBER files',
-    )
-
-    filesystem = optparse.OptionGroup(parser, 'Filesystem Options')
-    filesystem.add_option(
-        '-o', '--output',
-        dest='outtmpl', metavar='TEMPLATE', default='%(title)s [%(id)s].%(ext)s',
-        help='Output filename template',
-    )
-    filesystem.add_option(
-        '-P', '--paths',
-        metavar='[TYPES:]PATH', dest='paths', default=None, action='append',
-        help='The paths where the files should be downloaded',
-    )
-    filesystem.add_option(
-        '--restrict-filenames',
-        action='store_true', dest='restrictfilenames', default=False,
-        help='Restrict filenames to only ASCII characters',
-    )
-
-    parser.add_option_group(general)
-    parser.add_option_group(network)
-    parser.add_option_group(selection)
-    parser.add_option_group(filesystem)
-
-    if overrideArguments is not None:
-        opts, args = parser.parse_args(overrideArguments)
-    else:
-        # Read config files
-        userConf = _readUserConf('yt-dlp')
-        argv = sys.argv[1:]
-        opts, args = parser.parse_args(userConf + argv)
-
-    return parser, opts, args
+        dest='max_downloads', metavar='
