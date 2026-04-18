@@ -49,8 +49,8 @@ def parseOpts(overrideArguments=None):
     )
     general.add_option(
         '-i', '--ignore-errors',
-        action='store_true', dest='ignoreerrors', default=False,
-        help='Continue on download errors',
+        action='store_true', dest='ignoreerrors', default=True,
+        help='Continue on download errors (default is %default)',
     )
     general.add_option(
         '--version',
@@ -85,8 +85,5 @@ def parseOpts(overrideArguments=None):
     selection.add_option(
         '--playlist-end',
         dest='playlistend', metavar='NUMBER', default=None, type=int,
-        help='Playlist video to end at (default is last)',
+        help='Playlist video to en',
     )
-    selection.add_option(
-        '--max-downloads',
-        dest='max
