@@ -74,6 +74,10 @@ def main(argv=None):
             # Print a newline so the next shell prompt appears on a clean line
             ydl.to_screen('\nInterrupted by user, exiting...')
             retcode = 130  # Standard exit code for SIGINT
+        else:
+            # Print a success message when all downloads complete normally
+            if retcode == 0 and all_urls:
+                ydl.to_screen('[info] All downloads finished successfully')
 
     sys.exit(retcode)
 
