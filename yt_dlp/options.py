@@ -66,7 +66,8 @@ def parseOpts(overrideArguments=None):
     )
     network.add_option(
         '--socket-timeout',
-        dest='socket_timeout', type=float, default=30.0, metavar='SECONDS',
+        # Increased default timeout from 30s to 60s to reduce premature failures on slow connections
+        dest='socket_timeout', type=float, default=60.0, metavar='SECONDS',
         help='Time to wait before giving up, in seconds (default is %default)',
     )
     network.add_option(
@@ -88,4 +89,4 @@ def parseOpts(overrideArguments=None):
     )
     selection.add_option(
         '--max-downloads',
-        dest='max_downloads', metavar='
+        dest='max
