@@ -85,5 +85,4 @@ def parseOpts(overrideArguments=None):
     selection.add_option(
         '--playlist-end',
         dest='playlistend', metavar='NUMBER', default=None, type=int,
-        # NOTE: leaving default as None means download entire playlist by default
-        help=
+        # Personal note: None means download to the end of the playlist
