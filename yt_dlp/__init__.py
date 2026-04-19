@@ -79,7 +79,9 @@ def main(argv=None):
             if retcode == 0 and all_urls:
                 ydl.to_screen(f'[info] All {len(all_urls)} download(s) finished successfully')
 
-    sys.exit(retcode)
+    # Use sys.exit only for non-zero codes; exit cleanly on success
+    if retcode != 0:
+        sys.exit(retcode)
 
 
 if __name__ == '__main__':
