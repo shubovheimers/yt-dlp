@@ -76,6 +76,7 @@ def main(argv=None):
             retcode = 130  # Standard exit code for SIGINT
         else:
             # Print a success message when all downloads complete normally
+            # Note: len(all_urls) reflects URLs passed in, not actual files downloaded
             if retcode == 0 and all_urls:
                 ydl.to_screen(f'[info] All {len(all_urls)} download(s) finished successfully')
 
